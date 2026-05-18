@@ -78,14 +78,14 @@ function renderBooks() {
 
 function statusColor(status) {
   const map = {
-    'Read':             'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
-    'Re-read':          'bg-blue-500/20 text-blue-300 border-blue-500/30',
-    'DNF':              'bg-red-500/20 text-red-300 border-red-500/30',
-    'Currently reading':'bg-indigo-500/20 text-indigo-300 border-indigo-500/30',
-    'Returned Unread':  'bg-slate-500/20 text-slate-300 border-slate-500/30',
-    'Want to read':     'bg-amber-500/20 text-amber-300 border-amber-500/30',
+    'Read':             'bg-[#A8E6CF]/25 text-[#1A2B3C] border-[#A8E6CF]',
+    'Re-read':          'bg-[#A8E6CF]/15 text-[#2D4A6B] border-[#A8E6CF]/60',
+    'DNF':              'bg-[#E17055]/15 text-[#C45E45] border-[#E17055]/50',
+    'Currently reading':'bg-[#1A2B3C]/10 text-[#1A2B3C] border-[#1A2B3C]/25',
+    'Returned Unread':  'bg-[#E8E3DC] text-[#1A2B3C]/60 border-[#E8E3DC]',
+    'Want to read':     'bg-[#D4A853]/15 text-[#8B6914] border-[#D4A853]/50',
   };
-  return map[status] || 'bg-slate-500/20 text-slate-300';
+  return map[status] || 'bg-[#E8E3DC] text-[#1A2B3C]/60 border-[#E8E3DC]';
 }
 
 function formatIcon(format) {
@@ -94,30 +94,30 @@ function formatIcon(format) {
 }
 
 function progressColor(pct) {
-  if (pct >= 100) return 'from-emerald-500 to-green-400';
-  if (pct >= 60)  return 'from-indigo-500 to-blue-400';
-  if (pct >= 30)  return 'from-purple-500 to-indigo-400';
-  return 'from-pink-500 to-purple-400';
+  if (pct >= 100) return 'from-[#A8E6CF] to-[#5DADA1]';
+  if (pct >= 60)  return 'from-[#E17055] to-[#F5A08B]';
+  if (pct >= 30)  return 'from-[#E17055] to-[#D4A853]';
+  return 'from-[#1A2B3C] to-[#2D4A6B]';
 }
 
 function createCard(book) {
   const pct = book.readingPercentage();
   const card = document.createElement('div');
-  card.className = 'book-card bg-slate-800 border border-slate-700 rounded-2xl p-5 flex flex-col gap-4 card-hover';
+  card.className = 'book-card bg-white border border-[#E8E3DC] rounded-2xl p-5 flex flex-col gap-4 card-hover shadow-sm';
   card.dataset.id = book._id;
 
   card.innerHTML = `
     <div class="flex items-start justify-between gap-3">
       <div class="flex-1 min-w-0">
-        <div class="flex items-center gap-2 mb-1">
-          <span class="text-lg">${formatIcon(book.format)}</span>
-          <span class="text-xs font-medium px-2 py-0.5 rounded-full border ${statusColor(book.status)}">${book.status}</span>
-          ${book.finished ? '<span class="text-xs font-medium px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">✓ Finished</span>' : ''}
+        <div class="flex flex-wrap items-center gap-1.5 mb-2">
+          <span class="text-base">${formatIcon(book.format)}</span>
+          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full border ${statusColor(book.status)}">${book.status}</span>
+          ${book.finished ? '<span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#A8E6CF]/25 text-[#2D6B5A] border border-[#A8E6CF]">✓ Finished</span>' : ''}
         </div>
-        <h2 class="font-bold text-white text-base leading-tight truncate" title="${escHtml(book.title)}">${escHtml(book.title)}</h2>
-        <p class="text-slate-400 text-sm mt-0.5 truncate">${escHtml(book.author)}</p>
+        <h2 class="font-display font-bold text-[#1A2B3C] text-base leading-snug" title="${escHtml(book.title)}">${escHtml(book.title)}</h2>
+        <p class="text-[#1A2B3C]/50 text-sm mt-0.5 font-medium">${escHtml(book.author)}</p>
       </div>
-      <button class="delete-btn text-slate-600 hover:text-red-400 transition-colors p-1 shrink-0" title="Delete book">
+      <button class="delete-btn text-[#1A2B3C]/20 hover:text-[#E17055] transition-colors p-1.5 shrink-0 rounded-lg hover:bg-[#E17055]/10" title="Delete book">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
         </svg>
@@ -127,33 +127,33 @@ function createCard(book) {
     <!-- Progress Bar -->
     <div>
       <div class="flex justify-between items-center mb-1.5">
-        <span class="text-xs text-slate-400">Progress</span>
-        <span class="text-xs font-semibold text-white">${pct}%</span>
+        <span class="text-xs font-semibold text-[#1A2B3C]/40 uppercase tracking-wider">Progress</span>
+        <span class="text-xs font-bold text-[#1A2B3C]">${pct}%</span>
       </div>
-      <div class="h-2 bg-slate-700 rounded-full overflow-hidden">
+      <div class="h-2 bg-[#F5F3F0] rounded-full overflow-hidden border border-[#E8E3DC]">
         <div class="h-full rounded-full bg-gradient-to-r ${progressColor(pct)} progress-bar" style="width: ${pct}%"></div>
       </div>
-      <div class="flex justify-between mt-1">
-        <span class="text-xs text-slate-500">${book.pagesRead.toLocaleString()} read</span>
-        <span class="text-xs text-slate-500">${book.pages.toLocaleString()} pages</span>
+      <div class="flex justify-between mt-1.5">
+        <span class="text-xs text-[#1A2B3C]/40">${book.pagesRead.toLocaleString()} read</span>
+        <span class="text-xs text-[#1A2B3C]/40">${book.pages.toLocaleString()} total</span>
       </div>
     </div>
 
     <!-- Meta -->
-    <div class="flex flex-wrap gap-2 text-xs text-slate-400">
-      <span class="flex items-center gap-1"><span>💰</span> $${Number(book.price).toFixed(2)}</span>
-      ${book.suggestedBy ? `<span class="flex items-center gap-1"><span>👤</span> ${escHtml(book.suggestedBy)}</span>` : ''}
+    <div class="flex flex-wrap gap-3 text-xs text-[#1A2B3C]/50">
+      <span class="flex items-center gap-1 font-medium">💰 $${Number(book.price).toFixed(2)}</span>
+      ${book.suggestedBy ? `<span class="flex items-center gap-1 font-medium">👤 ${escHtml(book.suggestedBy)}</span>` : ''}
     </div>
 
     <!-- Actions -->
-    <div class="flex gap-2 mt-auto pt-2 border-t border-slate-700">
-      <button class="update-pages-btn flex-1 text-xs bg-indigo-600/20 hover:bg-indigo-600/40 text-indigo-300 border border-indigo-600/30 rounded-lg py-2 font-medium transition-colors">
+    <div class="flex gap-2 mt-auto pt-3 border-t border-[#E8E3DC]">
+      <button class="update-pages-btn flex-1 text-xs bg-[#1A2B3C] hover:bg-[#2D4A6B] text-white rounded-lg py-2 font-semibold transition-colors">
         Update Pages
       </button>
-      <button class="change-status-btn flex-1 text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 border border-slate-600 rounded-lg py-2 font-medium transition-colors">
-        Change Status
+      <button class="change-status-btn flex-1 text-xs bg-[#F5F3F0] hover:bg-[#E8E3DC] text-[#1A2B3C] border border-[#E8E3DC] rounded-lg py-2 font-semibold transition-colors">
+        Status
       </button>
-      <button class="edit-btn text-xs bg-slate-700 hover:bg-slate-600 text-slate-300 border border-slate-600 rounded-lg py-2 px-3 font-medium transition-colors">
+      <button class="edit-btn text-xs bg-[#E17055]/10 hover:bg-[#E17055]/20 text-[#C45E45] border border-[#E17055]/30 rounded-lg py-2 px-3 font-semibold transition-colors">
         Edit
       </button>
     </div>
@@ -318,17 +318,17 @@ function showFormError(msg) {
 
 function showAlert(msg, type = 'info') {
   const toast = document.createElement('div');
-  const colors = {
-    success: 'bg-emerald-600',
-    error:   'bg-red-600',
-    info:    'bg-slate-700',
+  const styles = {
+    success: 'background:#1A2B3C; color:#A8E6CF; border:1px solid #A8E6CF55',
+    error:   'background:#E17055; color:#fff; border:1px solid #C45E45',
+    info:    'background:#FDFCFB; color:#1A2B3C; border:1px solid #E8E3DC',
   };
-  toast.className = `fixed bottom-6 right-6 ${colors[type]} text-white px-5 py-3 rounded-xl shadow-2xl text-sm font-medium z-50 transform translate-y-0 opacity-100 transition-all duration-300`;
+  toast.style.cssText = `position:fixed;bottom:24px;right:24px;${styles[type]};padding:12px 20px;border-radius:14px;box-shadow:0 8px 32px rgba(26,43,60,0.18);font-size:13px;font-weight:600;z-index:9999;font-family:Inter,sans-serif;transition:all 0.3s ease;`;
   toast.textContent = msg;
   document.body.appendChild(toast);
   setTimeout(() => {
     toast.style.opacity = '0';
-    toast.style.transform = 'translateY(16px)';
+    toast.style.transform = 'translateY(12px)';
     setTimeout(() => toast.remove(), 300);
   }, 2800);
 }
