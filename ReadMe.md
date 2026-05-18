@@ -62,3 +62,16 @@ TP4-Book_Reading_Tracker/
 | `format` | String Enum | `Print`, `PDF`, `Ebook`, `AudioBook` |
 | `suggestedBy`| String | Person or entity who recommended the book |
 | `finished` | Boolean | Default `false` (`0`). Automatically becomes `true` (`1`) when `pagesRead == pages` |
+
+
+
+
+---
+--
+
+- npm run build        # Compile both server + client
+- npm start            # Run compiled server (dist/server.js)
+- npm run dev          # Build + start in one command
+- npm run seed         # Seed database via ts-node
+
+- http://localhost:3000 
