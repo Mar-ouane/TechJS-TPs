@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Clean Code: A Handbook of Agile Software Craftsmanship",
+    "author": "Robert C. Martin",
+    "pages": 464,
+    "pagesRead": 464,
+    "status": "Read",
+    "price": 42.50,
+    "format": "Print",
+    "suggestedBy": "Tech Lead Sarah",
+    "finished": true
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "pages": 616,
+    "pagesRead": 312,
+    "status": "Currently reading",
+    "price": 49.99,
+    "format": "Ebook",
+    "suggestedBy": "Alex from DevOps",
+    "finished": false
+  },
+  {
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas, Andrew Hunt",
+    "pages": 352,
+    "pagesRead": 0,
+    "status": "Want to read",
+    "price": 39.95,
+    "format": "AudioBook",
+    "suggestedBy": "Professor Smith",
+    "finished": false
+  },
+  {
+    "title": "Advanced Quantum Mechanics",
+    "author": "J. J. Sakurai",
+    "pages": 550,
+    "pagesRead": 120,
+    "status": "DNF",
+    "price": 75.00,
+    "format": "PDF",
+    "suggestedBy": "Study Group",
+    "finished": false
+  },
+  {
+    "title": "You Don't Know JS: Scope & Closures",
+    "author": "Kyle Simpson",
+    "pages": 98,
+    "pagesRead": 98,
+    "status": "Re-read",
+    "price": 18.50,
+    "format": "Ebook",
+    "suggestedBy": "JavaScript Community",
+    "finished": true
+  },
+  {
+    "title": "Microservices Patterns",
+    "author": "Chris Richardson",
+    "pages": 520,
+    "pagesRead": 0,
+    "status": "Returned Unread",
+    "price": 54.99,
+    "format": "Print",
+    "suggestedBy": "Library Catalog",
+    "finished": false
+  },
+  {
+    "title": "Refactoring: Improving the Design of Existing Code",
+    "author": "Martin Fowler",
+    "pages": 448,
+    "pagesRead": 150,
+    "status": "Currently reading",
+    "price": 47.20,
+    "format": "Print",
+    "suggestedBy": "Senior Developer Marc",
+    "finished": false
+  },
+  {
+    "title": "Eloquent JavaScript, 3rd Edition",
+    "author": "Marijn Haverbeke",
+    "pages": 472,
+    "pagesRead": 0,
+    "status": "Want to read",
+    "price": 35.00,
+    "format": "PDF",
+    "suggestedBy": "Reddit r/learnjavascript",
+    "finished": false
+  },
+  {
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "pages": 320,
+    "pagesRead": 320,
+    "status": "Read",
+    "price": 21.99,
+    "format": "AudioBook",
+    "suggestedBy": "Friend Emma",
+    "finished": true
+  },
+  {
+    "title": "Introduction to Algorithms, 4th Edition",
+    "author": "Thomas H. Cormen",
+    "pages": 1312,
+    "pagesRead": 345,
+    "status": "DNF",
+    "price": 89.99,
+    "format": "Print",
+    "suggestedBy": "Algorithm Course",
+    "finished": false
+  }
+]
