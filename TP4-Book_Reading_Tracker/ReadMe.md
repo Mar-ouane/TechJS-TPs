@@ -3,6 +3,8 @@
 This repository contains the implementation of the Book Reading Tracker practical work (TP). This `ReadMe.md` file tracks the project progress, task breakdown, and folder structure.
 
 ---
+> ## note : realise en binome Marouane & Nawal
+---
 
 ## 📁 Folder Structure
 
