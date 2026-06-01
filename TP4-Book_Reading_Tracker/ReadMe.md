@@ -68,7 +68,7 @@ TP4-Book_Reading_Tracker/
 
 ---
 --
-
+- npm install
 - npm run build        # Compile both server + client
 - npm start            # Run compiled server (dist/server.js)
 - npm run dev          # Build + start in one command
